@@ -1,4 +1,12 @@
 ﻿--/**********************************/
+--/		ALERTAS		     /
+--/**********************************/
+create table alerts(
+	alert_id serial primary key,
+	alert_str character varying(56) not null
+);
+
+--/**********************************/
 --/		LANGUAGE	     /
 --/**********************************/
 create table languages(
@@ -41,7 +49,6 @@ alter table imdb_moviecountries
 	add constraint primary_country primary key (movieid, countrid);
 
 
-
 --/**********************************/
 --/		GENRES		     /
 --/**********************************/
@@ -62,5 +69,6 @@ set genrid = (select genre_id from genres where genre_str = genre_.genre);
 alter table imdb_moviegenres
 	drop column genre,
 	add constraint primary_genre primary key (movieid, genrid);
+
 
 
