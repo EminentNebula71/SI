@@ -1,3 +1,3 @@
-update orderdetail
-set price = (select price from products)
-where pride_id = (select prod_id from products)
+﻿update orderdetail
+set price=round((((select price from products where prod_id=orderdetail.prod_id)
+/ (select(1.02^(extract(year from now()) - extract(year from orders.orderdate))) from orders where orderid=orderdetail.orderid))*quantity)::numeric, 2);
