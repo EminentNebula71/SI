@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block article_block %}
+<article>
+      <div class="elemento_historial">
+          <div class="desc_historial">
+            {% for movie in movies %}
+            <li>Titulo: {{movie.titulo}}</li>
+            <li>Importe: {{movie.precio}}€</li>
+            {% endfor %}
+          </div>
+      </div>
+
+</article>
+{% endblock %}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel = "stylesheet" href="{{url_for('static', filename = 'stylesheet.css')}}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="{{url_for('static', filename = 'script.js')}}"></script>
+    </head>
+
+    <title> NETFLEX </title>
+
+    <header>
+        <h1><a href="{{ url_for('index') }}"><img src = "{{url_for('static', filename = 'imagenes/NETFLEX.png')}}"></a>
+            <div class="botones_arriba">
+                {% if not session['usuario'] %}
+                <a href="{{ url_for('login') }}"><button class="boton_arriba">Inicio sesión</button></a>
+                <a href="{{ url_for('registro') }}"><button class="boton_arriba">Regístrate</button></a>
+                {% else %}
+                <a href="{{ url_for('logout') }}"><button class="boton_arriba">Cerrar sesión</button></a>
+                {% endif %}
+            </div>
+        </h1>
+    </header>
+
+    <body>
+        <nav>
+            <ul>
+            <form action="{{ url_for('buscar') }}" method="post">
+                <input class="lateral" type="search" pattern=".{3,}" name="Buscador" placeholder="🔎">
+                <input class="lateral" type="submit" value="Buscar">
+            </form>
+            {% if session['usuario'] %}
+            <li><a href="{{ url_for('carrito') }}"><button>Carrito</button></a></li>
+            <li><a href="{{ url_for('historial') }}"><button>Historial</button></a></li>
+            {% endif %}
+            <li>
+                <form action="{{ url_for('categoria') }}" method = "post">
+                <select name="Generos">
+                    <option value="Todos">Todos</option>
+                    <option value="Accion">Acción</option>
+                    <option value="Aventura">Aventura</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Comedia">Comedia</option>
+                    <option value="Ciencia Ficción">Ciencia Ficción</option>
+                    <option value="Animación">Animación</option>
+                </select>
+                <input class="lateral2" type="submit" value="Aceptar">
+                </form>
+            </li>
+            </ul>
+        </nav>
+        
+        
+        {% block article_block %}
+        {% endblock %}
+        
+
+        <footer>
+            <p>@Copyright 2019 Anglex</p>
+        </footer>
+    </body>
+
+</html>

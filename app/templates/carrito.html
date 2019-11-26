@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block article_block %}
+<article>
+      {% for movie in movies %}  
+        <div class="elemento_carrito">
+          <div>
+              <a href="{{ url_for('detalles', id=movie.id) }}"><img class="img_properties" src = "{{url_for('static', filename = movie.poster)}}" alt={{movie.id}}></a>
+          </div>
+            <div class="desc_carrito">
+              <h2><li>{{movie.titulo}}</li></h2>
+              <p>Precio: {{movie.precio}}€</p>
+            </div>
+        </div>
+      {% endfor %}
+      <div>
+        Precio total: {{precio}}
+      </div>
+      <div>
+          <button class="tramitar" onclick="window.location.href='{{ url_for('compra', precio = precio)}}'">Tramitar</button>
+      </div>
+</article>
+{% endblock %}

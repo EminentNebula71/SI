@@ -1,0 +1,280 @@
+*{
+  text-decoration: none;
+
+    box-sizing: border-box
+}
+
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+header{
+    background-color: antiquewhite;
+    padding: 1px;
+    text-align: center;
+    font-size: medium;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 0;
+}
+
+
+nav{
+    float: left;
+    width: 20%;
+    background-color: tan;
+    padding: 15px;
+    height: 580px;
+    z-index: 1;
+}
+
+nav ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+article{
+    float: left;
+    padding: 20px;
+    width: 80%;
+    background-color: white;
+    position: relative;
+}
+
+.peliculas{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  clear: both;
+  grid-row-gap: 10px;
+}
+
+div.desc_carrito{
+  position: absolute;
+  top: 0px;
+  left: 200px;
+}
+
+div.elemento_carrito{
+  position: relative;
+  top: 0px;
+  left: 5px;
+}
+
+div.elemento_historial{
+  position: relative;
+  border-top: 4px;
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-style: solid;
+  border-color: FireBrick;
+}
+
+.tramitar{
+  background-color: FireBrick;
+  border: 0px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.5s;
+  width: 10%;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.img_properties{
+  height: 280px;
+  width: 180px;
+}
+
+.poster_properties{
+  height: 390px;
+  width: 290px;
+}
+
+.desarrollo{
+  position: absolute;
+  top: 500%;
+  right: 40%;
+}
+section:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+footer{
+    background-color: antiquewhite;
+    text-align: center;
+    color: black;
+    position: fixed;
+    bottom: 0;
+    width: 99%;
+}
+
+div.Sinopsis{
+  position: absolute;
+  left: 370px;
+  top: 10%;
+  font-size: 20px;
+}
+
+button{
+  background-color: FireBrick;
+  border: 0px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.5s;
+  width: 100%;
+ }
+
+  input.lateral{
+    background-color: FireBrick;
+    border: 0px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.5s;
+    border-bottom: 5px solid tan;
+    width: 100%;
+ }
+
+ input.lateral2{
+  background-color: FireBrick;
+  border: 0px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.5s;
+  border-bottom: 5px solid tan;
+  width: 100%;
+}
+
+ input.contenido{
+   background-color: FireBrick;
+   border: 0px;
+   color: white;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   transition-duration: 0.5s;
+   border-top: 5px solid white;
+
+   width: 100%;
+}
+
+input.izquierda, input.derecha, input.derecha1, input.derecha3, input.derecha4, input.derecha2, input.tarjeta{
+  background-color: FireBrick;
+  border: 0px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition-duration: 0.5s;
+  width: 49%;
+}
+
+input.izquierda:focus, input.derecha:focus, input.derecha1:focus, input.derecha3:focus, input.derecha4:focus, input.derecha2:focus, input.tarjeta:focus{
+  background-color: antiquewhite;
+  color: FireBrick;
+}
+
+input.derecha{
+  position: absolute;
+  right: 1%;
+  bottom: 35%;
+}
+
+input.derecha1{
+  position: absolute;
+  right: 1%;
+  bottom: 55%;
+}
+
+input.derecha3{
+  position: absolute;
+  right: 1%;
+  top: 21.5%;
+  bottom: 55%;
+}
+
+input.derecha2{
+  position: absolute;
+  right: 1%;
+  bottom: 37.1%;
+}
+
+input.derecha4{
+  position: absolute;
+  right: 1%;
+  bottom: 43%;
+}
+
+select{
+  background-color: FireBrick;
+  border: 0px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.5s;
+  border-top: 5px solid tan;
+  width: 100%;
+}
+
+
+ input:hover{
+   background-color: tan;
+   color: FireBrick;
+ }
+ button:hover{
+   background-color: antiquewhite;
+   color:FireBrick;
+ }
+
+ .boton_izquierda:hover{
+   background-color: tan;
+   color:FireBrick;
+ }
+
+.boton_arriba{
+     display: block;
+     width: 200px;
+     height: 68px;
+   }
+
+div.botones_arriba{
+  position:absolute;
+  right: 0;
+  top: 0;
+}
+
+.error{
+  color:red
+}
+@media (max-width: 600px) {
+    nav, article {
+      width: 100%;
+      height: auto;
+    }
+  }

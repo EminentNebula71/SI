@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block article_block %}
+  <article>
+      <h2>Bienvenido de nuevo</h2>
+      <p>Introduce los datos requeridos a continuación</p>
+      <form action="{{ url_for('login') }}" method="post">
+          {% if nombre %}
+          <input class="izquierda" type="text" pattern="[a-z]{2,}" value="{{nombre}}" name="nombre" placeholder="Nombre de usuario"><br>
+          {% else %}
+          <input class="izquierda" type="text" pattern="[a-z]{2,}" name="nombre" placeholder="Nombre de usuario"><br>
+          {% endif %}
+          <input class="derecha" type="password" pattern=".{8,}" name="contrasenia" placeholder="Contraseña"><br>
+          <input class="contenido" type="submit" value="Continuar"><br>
+  </article>
+{% endblock %}

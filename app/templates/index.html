@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block article_block %}
+<article>
+  <div class="peliculas">
+    
+    {% for movie in movies %}
+    <div><a href="{{ url_for('detalles', id=movie.id) }}"><img class="img_properties" src = "{{url_for('static', filename = movie.poster)}}" alt={{movie.id}}></a></div>
+    {% endfor %}
+
+  </div>
+</article>
+{% endblock %}

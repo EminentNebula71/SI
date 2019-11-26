@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block article_block %}
+<article>
+  <h2>Bienvenido al mejor portal de películas del mundo</h2>
+  <p>Introduce los datos requeridos a continuación</p>
+  <form action="{{ url_for('registro') }}" method="post">
+    {% if flag == 1 %}
+      <p class = "error">*Usuario ya existente*</p>
+    {% elif flag == 2 %}
+      <p class = "error">*Las contraseñas no son iguales*</p>
+    {% endif %}
+    <input class="izquierda" type="email" name="correo" placeholder="Correo electrónico"><br>
+    <input class="derecha1" type="text" pattern="[a-z]{2,}" name="nombre" placeholder="Nombre de usuario"><br>
+    <input class="izquierda" type="password" id='1' pattern=".{8,}" name="contrasenia" placeholder="Contraseña"><br>
+    <input class="derecha2" type="password" pattern=".{8,}" name="repetir" placeholder="Repetir contraseña"><br>
+    <input class="tarjeta" type="text" name="tarjeta" placeholder="Tarjeta de crédito"><br>
+    <input class="contenido" type="submit" value="Continuar"><br>
+    <meter id='2' value="2" min="0" max="100"></meter><br>
+</article>
+{% endblock %}

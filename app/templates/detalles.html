@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block article_block %}
+<article>
+    <img class="poster_properties" src = "{{url_for('static', filename = movie.poster)}}" alt={{movie.id}}>
+    <div class="Sinopsis">
+      <ul>
+        <li>Titulo: {{movie.titulo}}</li>
+        <li>Director: {{movie.director}}</li>
+        {% for actor in movie.actores %}
+        <li>Actor: {{actor.nombre}} - Personaje: {{actor.personaje}}</li>
+        {% endfor %}
+        <li>Importe: {{movie.precio}}€</li>
+        
+      </ul>
+      {% if session['usuario'] %}
+        <button class="aniadir" onclick="window.location.href='{{ url_for('aniadir', id = movie.id)}}'">Añadir al carrito</button>
+      {% endif %}
+  </div>
+</article>
+{% endblock %}

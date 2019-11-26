@@ -1,0 +1,64 @@
+{
+    "peliculas": [
+        {
+            "id": 1,
+            "titulo": "DRIVE (2011)",
+            "poster": "imagenes/driveposter.jpg",
+            "director": "Nicolas Winding Refn",
+            "precio": 9.99,
+            "categoria": "Thriller",
+            "año": 2011,
+            "actores": [
+                {
+                    "nombre": "Ryan Gosling",
+                    "personaje": "The Driver"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "titulo": "One Piece: Stampede",
+            "poster": "imagenes/onepiece.jpg",
+            "director": "Takashi Otsuka",
+            "precio": 14.99,
+            "categoria": "Aventura",
+            "año": 2019,
+            "actores": [
+                {
+                    "nombre": "Mayumi Tanaka",
+                    "personaje": "Monkey D. Luffy"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "titulo": "Bloodsport",
+            "poster": "imagenes/vainaloca.jpg",
+            "director": "Newt Arnold",
+            "precio": 4.99,
+            "categoria": "Accion",
+            "año": 1988,
+            "actores": [
+                {
+                    "nombre": "Frank W. Dux",
+                    "personaje": "Jean-Claude Van Damme"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "titulo": "Dragon Ball Super: Broly",
+            "poster": "imagenes/broly.jpg",
+            "director": "Tatsuya Nagamine",
+            "precio": 19.99,
+            "categoria": "Accion",
+            "año": 2018,
+            "actores": [
+                {
+                    "nombre": "Masako Nozawa",
+                    "personaje": "Son Goku"
+                }
+            ]
+        }
+    ]
+}
