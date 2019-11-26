@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION updOrders() RETURNS TRIGGER AS $$
+﻿CREATE OR REPLACE FUNCTION updOrders() RETURNS TRIGGER AS $$
   BEGIN
     IF (TG_OP = 'INSERT') THEN
       UPDATE orders set netamount = netamount + NEW.price*NEW.quantity
