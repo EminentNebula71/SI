@@ -1,24 +1,24 @@
 ﻿CREATE OR REPLACE FUNCTION updInventory() RETURNS TRIGGER AS $$
   DECLARE
-    r RECORD;
-    s INT4;
+    record RECORD;
+    entero INT4;
   BEGIN
-    FOR r IN (
+    FOR record IN (
       SELECT * 
-      FROM (orderdetail NATURAL JOIN inventory AS i NATURAL JOIN orders) as t 
-      WHERE NEW.orderid = t.orderid)
+      FROM (orderdetail NATURAL JOIN inventory AS i NATURAL JOIN orders) as aux 
+      WHERE NEW.orderid = aux.orderid)
       LOOP
-        s := (SELECT stock FROM inventory WHERE r.prod_id = prod_id) - r.quantity;
-        IF (s < 0) THEN
-          INSERT INTO alerts VALUES (r.orderid,r.prod_id);
+        entero := (SELECT stock FROM inventory WHERE record.prod_id = prod_id)-record.quantity;
+        IF (entero < 0) THEN
+          INSERT INTO alerts VALUES (record.orderid, record.prod_id);
 
           UPDATE orders SET status=NULL
           WHERE NEW.orderid=orderid;
         ELSE
           UPDATE inventory
-          SET sales = sales + r.quantity,
-          stock = stock - r.quantity
-          WHERE r.prod_id = prod_id;
+          SET sales = sales + record.quantity,
+          stock = stock - record.quantity
+          WHERE record.prod_id = prod_id;
 
         END IF;
       END LOOP;

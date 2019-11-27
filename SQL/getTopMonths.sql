@@ -1,8 +1,11 @@
 ﻿CREATE OR REPLACE FUNCTION
 getTopMonths(nProducts integer, importe numeric)
-RETURNS table(fecha text, money numeric, sales2 bigint) AS $$
+RETURNS table(
+  fecha text, 
+  importe_total numeric, 
+  ventas_total bigint) AS $$
 DECLARE
-
+--cambiar para que devuelva año y mes por separado
 BEGIN
   RETURN QUERY SELECT * from
     (SELECT to_char(orderdate, 'YYYY-MM') as fecha, 
@@ -18,6 +21,7 @@ BEGIN
   WHERE total >= importe or ventas >= nProducts;
 END;
 $$ LANGUAGE plpgsql;
+
 -- CREATE OR REPLACE FUNCTION getTopMonths(numeric, numeric) RETURNS TABLE(
 --     anio INT,
 --     mes INT,
