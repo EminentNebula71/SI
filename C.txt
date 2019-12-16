@@ -1,0 +1,2 @@
+la primera devuelve resultados nada más comenzar
+la segunda se puede beneficiar de la ejecución en paralelo, pues comprueba cada vez los estados de los pedidos
